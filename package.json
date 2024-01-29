@@ -1,0 +1,19 @@
+{
+  "name": "newyear2024",
+  "version": "1.0.0",
+  "description": "This is a small program to celebrate the Spring Festival",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamzhz/newYear2024.git"
+  },
+  "author": "zhzqqyd@qq.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamzhz/newYear2024/issues"
+  },
+  "homepage": "https://github.com/iamzhz/newYear2024#readme"
+}
