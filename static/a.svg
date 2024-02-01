@@ -1,0 +1,19 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="800"
+  height="600"
+  viewBox="0 0 800 600"
+  preserveAspectRatio="xMidYMid meet"
+>
+
+  <!-- 背景填充为浅红色 -->
+  <rect width="800" height="600" fill="#FFC0C0" />
+
+  <!-- 上方的深红色灯笼 -->
+  <circle cx="200" cy="100" r="50" fill="#B30000" />
+  <circle cx="600" cy="100" r="50" fill="#B30000" />
+
+  <!-- 下面的绿草 -->
+  <rect x="0" y="500" width="800" height="100" fill="#00FF00" />
+
+</svg>

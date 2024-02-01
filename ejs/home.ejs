@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2024!</title>
+    <% if(isMobile) { %>
+        <style>
+        body {background-image: url('/static/bg_mobile.jpeg');}
+        </style>
+    <% }else { %> 
+        <style>
+            body {background-image: url('/static/bg_pc.jpeg');}
+        </style>
+    <% } %>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: 100% 100%;
+        }
+        body,html{
+            height: 100%;
+            width:100%;
+            margin:0 0 0 0;
+            overflow:hidden hidden;
+        }
+        .text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            mix-blend-mode: difference;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text">Welcome , <%=call %></h1>
+    <h1 class="text">还剩<span id="time"></span>就过年了！<h1>
+    
+    <script>
+        const timestamp24 = 1707494400000; // (ms) 2024春节0时时间戳 
+        const t = document.getElementById('time');
+        const sec = 1000;
+        const minute = sec * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+        function time2text(time) {
+            if (time < minute) { // less than a minute
+                return (time / sec).toFixed(1) + "sec";
+            } else if (time < hour) { // less than an hour
+                var minutes = Math.floor(time / minute);
+                var remainingTime = time % minute;
+                return minutes + "min " + time2text(remainingTime);
+            } else if (time < day) { // less than a day
+                var hours = Math.floor(time / hour);
+                remainingTime = time % hour;
+                return hours + "hour " + time2text(remainingTime);
+            } else { // more than a day
+                var days = Math.floor(time / day);
+                remainingTime = time % day;
+                return days + "day " + time2text(remainingTime);
+            }
+        }
+        function showTime() {
+            if(timestamp24 > Date.now()) {
+                t.innerHTML = time2text(timestamp24 - Date.now());
+            }else{
+                document.getElementsByClassName('text')[1].innerHTML = "过年啦！";
+                window.alert("<%=call %>, 过年好！");
+                return ;
+            }
+            setTimeout(showTime, 100);
+        }
+        showTime();
+    </script>
+</body>
+</html>
